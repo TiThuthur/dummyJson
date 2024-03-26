@@ -18,7 +18,18 @@ const fetching = async (request) => {
   categoryDiv.textContent = product.category;
   descriptionDiv.textContent = product.description;
   discountPercentageDiv.textContent = `${product.discountPercentage} %`;
-  imagesDiv.textContent = product.images;
+  for (let i = 0; i < product.images.length; i++) {
+    const downloadingImage = new Image();
+    downloadingImage.src = product.images[i];
+    downloadingImage.onload = () => {
+      image.src = this.src;
+    };
+    downloadingImage.id = "image" + i;
+    const newDiv = document.createElement("div");
+    newDiv.className = "image";
+    newDiv.appendChild(downloadingImage);
+    imagesDiv.appendChild(newDiv);
+  }
   priceDiv.textContent = `${product.price} €`;
   ratingDiv.textContent = product.rating;
   stockDiv.textContent = product.stock;
