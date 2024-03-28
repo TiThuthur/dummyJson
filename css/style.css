@@ -1,15 +1,46 @@
 @import url(../css/Roboto.css);
+a {
+  text-decoration: none;
+  color: #050808;
+}
+
 body {
+  margin: 0;
+  padding: 0;
   background: #f8fafa;
   color: #050808;
   font-family: Roboto, sans-serif;
+  box-sizing: border-box;
+}
+
+header nav {
+  display: flex;
+  height: 20vh;
+}
+header nav .button-nav {
+  display: flex;
+  justify-content: space-around;
+  align-content: space-between;
+  font-size: 2em;
+  margin: auto;
+  text-align: center;
+  width: 70vw;
+  background-color: #74a39a;
+  border-radius: 0.5em;
+}
+header nav .button-nav .merch {
+  border-right: #b2acc8 solid 2px;
+  border-left: #b2acc8 solid 2px;
+  padding-right: 1.5em;
+  padding-left: 1.5em;
 }
 
 .card {
   background-color: #74a39a;
   border-radius: 1em;
-  width: 50vw;
+  width: 70vw;
   padding: 2em;
+  margin: auto;
 }
 .card .title {
   font-size: 2em;
@@ -22,9 +53,26 @@ body {
 .card .images .image img {
   padding: 1em;
   border-radius: 5em;
-  width: 15vw;
+  width: 10vw;
 }
-.card .number span {
+.card table {
+  border-radius: 1em;
+  background-color: #b2acc8;
+  margin: auto;
+}
+.card table caption {
+  font-size: 2em;
+}
+.card table tr {
+  font-size: 1.2em;
+  border: black 2px solid;
+}
+.card table tr,
+.card table tr th,
+.card table tr td {
+  padding: 1em;
+}
+.card table .number span {
   margin: 10px;
 }
 
