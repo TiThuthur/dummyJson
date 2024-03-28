@@ -1,23 +1,37 @@
-.card {
-  background-color: aqua;
-  width: 50vw;
-  padding: 2em;
-}
-.images {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  .image {
-    img {
-      padding: 1em;
-      border-radius: 5em;
-      width: 15vw;
-    }
-  }
+@import url(../css/Roboto.css);
+
+body {
+  background: #f8fafa;
+  color: #050808;
+  font-family: Roboto, sans-serif;
 }
 
-.number {
-  span {
-    margin: 10px;
+.card {
+  background-color: #74a39a;
+  border-radius: 1em;
+  width: 50vw;
+  padding: 2em;
+
+  .title {
+    font-size: 2em;
+  }
+
+  .images {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    .image {
+      img {
+        padding: 1em;
+        border-radius: 5em;
+        width: 15vw;
+      }
+    }
+  }
+
+  .number {
+    span {
+      margin: 10px;
+    }
   }
 }

@@ -1,21 +1,30 @@
+@import url(../css/Roboto.css);
+body {
+  background: #f8fafa;
+  color: #050808;
+  font-family: Roboto, sans-serif;
+}
+
 .card {
-  background-color: aqua;
+  background-color: #74a39a;
+  border-radius: 1em;
   width: 50vw;
   padding: 2em;
 }
-
-.images {
+.card .title {
+  font-size: 2em;
+}
+.card .images {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
-.images .image img {
+.card .images .image img {
   padding: 1em;
   border-radius: 5em;
   width: 15vw;
 }
-
-.number span {
+.card .number span {
   margin: 10px;
 }
 
