@@ -47,7 +47,7 @@ header {
   border-radius: 1em;
   width: 70vw;
   padding: 2em;
-  margin: auto;
+  margin: 1em auto;
 
   .title {
     font-size: 2em;
@@ -58,10 +58,12 @@ header {
     justify-content: space-around;
     flex-wrap: wrap;
     .image {
+      margin: auto;
       img {
         padding: 1em;
         border-radius: 5em;
-        width: 10vw;
+        // width: 10vw;
+        max-height: 10vh;
       }
     }
   }

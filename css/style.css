@@ -47,7 +47,7 @@ header nav .button-nav .contact {
   border-radius: 1em;
   width: 70vw;
   padding: 2em;
-  margin: auto;
+  margin: 1em auto;
 }
 .card .title {
   font-size: 2em;
@@ -57,10 +57,13 @@ header nav .button-nav .contact {
   justify-content: space-around;
   flex-wrap: wrap;
 }
+.card .images .image {
+  margin: auto;
+}
 .card .images .image img {
   padding: 1em;
   border-radius: 5em;
-  width: 10vw;
+  max-height: 10vh;
 }
 .card table {
   border-radius: 1em;
