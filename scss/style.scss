@@ -14,9 +14,10 @@ body {
   box-sizing: border-box;
 }
 header {
+  margin-top: 1em;
+  height: 10em;
   nav {
     display: flex;
-    height: 20vh;
     .button-nav {
       display: flex;
       justify-content: space-around;
@@ -28,11 +29,15 @@ header {
       width: 70vw;
       background-color: #74a39a;
       border-radius: 0.5em;
+      p {
+        width: 100%;
+      }
       .merch {
         border-right: #b2acc8 solid 2px;
         border-left: #b2acc8 solid 2px;
-        padding-right: 1.5em;
-        padding-left: 1.5em;
+      }
+      .contact {
+        border-right: #b2acc8 solid 2px;
       }
     }
   }

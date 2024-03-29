@@ -13,9 +13,12 @@ body {
   box-sizing: border-box;
 }
 
+header {
+  margin-top: 1em;
+  height: 10em;
+}
 header nav {
   display: flex;
-  height: 20vh;
 }
 header nav .button-nav {
   display: flex;
@@ -28,11 +31,15 @@ header nav .button-nav {
   background-color: #74a39a;
   border-radius: 0.5em;
 }
+header nav .button-nav p {
+  width: 100%;
+}
 header nav .button-nav .merch {
   border-right: #b2acc8 solid 2px;
   border-left: #b2acc8 solid 2px;
-  padding-right: 1.5em;
-  padding-left: 1.5em;
+}
+header nav .button-nav .contact {
+  border-right: #b2acc8 solid 2px;
 }
 
 .card {

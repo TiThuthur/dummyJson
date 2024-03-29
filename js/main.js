@@ -1,37 +1,60 @@
 const request = "https://dummyjson.com/products/1";
-const titleDiv = document.getElementById("title");
-const brandDiv = document.getElementById("brand");
-const categoryDiv = document.getElementById("category");
-const descriptionDiv = document.getElementById("description");
-const discountPercentageDiv = document.getElementById("discountPercentage");
-const imagesDiv = document.getElementById("images");
-const priceDiv = document.getElementById("price");
-const ratingDiv = document.getElementById("rating");
-const stockDiv = document.getElementById("stock");
+const content = document.getElementById("content");
 
 const fetching = async (request) => {
   const response = await fetch(request);
   const product = await response.json();
   console.log(product);
-  titleDiv.textContent = product.title;
-  brandDiv.textContent = product.brand;
-  categoryDiv.textContent = product.category;
-  descriptionDiv.textContent = product.description;
-  discountPercentageDiv.textContent = `${product.discountPercentage} %`;
-  for (let i = 0; i < product.images.length; i++) {
-    const downloadingImage = new Image();
-    downloadingImage.src = product.images[i];
-    downloadingImage.onload = () => {
-      image.src = this.src;
-    };
-    downloadingImage.id = "image" + i;
-    const newDiv = document.createElement("div");
-    newDiv.className = "image";
-    newDiv.appendChild(downloadingImage);
-    imagesDiv.appendChild(newDiv);
-  }
-  priceDiv.textContent = `${product.price} €`;
-  ratingDiv.textContent = product.rating;
-  stockDiv.textContent = product.stock;
+  const card = document.createElement("div");
+  card.className = "card "+product.id;
+  // for (let i = 0; i <div product.images.length; i++) {
+  //   const downloadingImage = new Image();
+  //   downloadingImage.src = product.images[i];
+  //   downloadingImage.onload = () => {
+  //     image.src = this.src;
+  //   };
+  //   downloadingImage.id = "image" + i;
+  //   const newDiv = document.createElement("div");
+  //   newDiv.className = "image";
+  //   newDiv.appendChild(downloadingImage);
+  //   imagesDiv.appendChild(newDiv);
+  // }
+  card.innerHTML = `
+  <div class="title"><h1 id="title" class="roboto-regular">${product.title}</h1></div>
+  <div class="brand"><h2 id="brand" class="roboto-regular">${product.brand}</h2></div>
+  <div class="category"><p id="category" class="roboto-regular">${product.category}</p></div>
+  <div id="description" class="description roboto-regular">${product.description}</div>
+  <div id="images" class="images">
+  <div class="image"><img src="${product.images[0]}" alt="" srcset=""></div>
+  <div class="image"><img src="${product.images[1]}" alt="" srcset=""></div>
+  <div class="image"><img src="${product.images[2]}" alt="" srcset=""></div>
+  <div class="image"><img src="${product.images[3]}" alt="" srcset=""></div>
+  <div class="image"><img src="${product.images[4]}" alt="" srcset=""></div>
+  <div class="image"><img src="${product.images[5]}" alt="" srcset=""></div>
+  </div>
+  <div>
+    <table>
+      <caption>
+        Statistiques
+      </caption>
+      <thead>
+        <tr>
+          <th>Remise (%)</th>
+          <th>Prix</th>
+          <th>rang</th>
+          <th>stock</th>
+        </tr>
+        <tr>
+          <td id="discountPercentage" class="discountPercentage">${product.discountPercentage} %</td>
+          <td id="price" class="price">${product.price}</td>
+          <td id="rating" class="rating">${product.rating}</td>
+          <td id="stock" class="stock">${product.stock}</td>
+        </tr>
+      </thead>
+    </table>
+  </div>`;
+
+  content.appendChild(card);
+  
 };
 fetching(request);
