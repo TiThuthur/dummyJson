@@ -2,6 +2,7 @@ for (let i = 0; i < 20; i++) {
   const request = "https://dummyjson.com/products/" + i;
   const content = document.getElementById("content");
 
+  // fonction qui appel l'url de dummyjson en async avec l'url dans request
   const fetching = async (request) => {
     const response = await fetch(request);
     const product = await response.json();
@@ -16,6 +17,17 @@ for (let i = 0; i < 20; i++) {
     category.innerHTML = `<div class="category"><p id="category" class="roboto-regular">${product.category}</p></div>`;
     const description = document.createElement("div");
     description.innerHTML = `<div id="description" class="description roboto-regular">${product.description}</div>`;
+    const images = document.createElement("div");
+
+    for (let i = 0; i < product.images.length; i++) {
+      let imageDiv = document.createElement("div");
+      let imgBalise = document.createElement("img");
+      imgBalise.src = product.images[i]; //pour chaques éléments du tableau on met l'url dans le champs img.src
+      imageDiv.className("image");
+      imageDiv.appendChild(imgBalise);
+      images.appendChild(imageDiv); //on ajoute à la div avant de refaire une boucle
+    }
+
     card.innerHTML = `
   
   <div id="images" class="images">
