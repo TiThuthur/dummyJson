@@ -1,4 +1,4 @@
-for (let i = 0; i < 20; i++) {
+for (let i = 1; i < 20; i++) {
   const request = "https://dummyjson.com/products/" + i;
   const content = document.getElementById("content");
 
@@ -40,14 +40,14 @@ for (let i = 0; i < 20; i++) {
         </caption>
         <thead>
           <tr>
-            <th>Remise (%)</th>
+            <th>Remise</th>
             <th>Prix</th>
-            <th>rang</th>
-            <th>stock</th>
+            <th>Rang</th>
+            <th>Stock</th>
           </tr>
           <tr>
             <td id="discountPercentage" class="discountPercentage">${product.discountPercentage} %</td>
-            <td id="price" class="price">${product.price}</td>
+            <td id="price" class="price">${product.price}€</td>
             <td id="rating" class="rating">${product.rating}</td>
             <td id="stock" class="stock">${product.stock}</td>
           </tr>

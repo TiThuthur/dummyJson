@@ -15,7 +15,7 @@ body {
 
 header {
   margin-top: 1em;
-  height: 10em;
+  height: 7em;
 }
 header nav {
   display: flex;
@@ -24,7 +24,7 @@ header nav .button-nav {
   display: flex;
   justify-content: space-around;
   align-content: space-between;
-  font-size: 2em;
+  font-size: 1.7em;
   margin: auto;
   text-align: center;
   width: 70vw;
@@ -33,6 +33,9 @@ header nav .button-nav {
 }
 header nav .button-nav p {
   width: 100%;
+}
+header nav .button-nav a {
+  color: #f8fafa;
 }
 header nav .button-nav .merch {
   border-right: #b2acc8 solid 2px;
@@ -63,12 +66,13 @@ header nav .button-nav .contact {
 .card .images .image img {
   padding: 1em;
   border-radius: 5em;
-  max-height: 10vh;
+  max-height: 25vh;
 }
 .card table {
   border-radius: 1em;
   background-color: #b2acc8;
   margin: auto;
+  color: #f8fafa;
 }
 .card table caption {
   font-size: 2em;
