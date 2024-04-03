@@ -10,55 +10,56 @@ for (let i = 0; i < 20; i++) {
     const card = document.createElement("div");
     card.className = "card " + product.id;
     const title = document.createElement("div");
-    title.innerHTML = `<div class="title"><h1 id="title" class="roboto-regular">${product.title}</h1></div>`;
+    title.className = "title";
+    title.innerHTML = `<h1 id="title" class="roboto-regular">${product.title}</h1>`;
     const brand = document.createElement("div");
-    brand.innerHTML = `<div class="brand"><h2 id="brand" class="roboto-regular">${product.brand}</h2></div>`;
+    brand.className = "brand";
+    brand.innerHTML = `<h2 id="brand" class="roboto-regular">${product.brand}</h2>`;
     const category = document.createElement("div");
-    category.innerHTML = `<div class="category"><p id="category" class="roboto-regular">${product.category}</p></div>`;
+    category.className = "category";
+    category.innerHTML = `<p id="category" class="roboto-regular">${product.category}</p>`;
     const description = document.createElement("div");
-    description.innerHTML = `<div id="description" class="description roboto-regular">${product.description}</div>`;
+    description.id = "description";
+    description.className = "description roboto-regular";
+    description.innerText = `${product.description}`;
     const images = document.createElement("div");
+    images.className = "images";
 
     for (let i = 0; i < product.images.length; i++) {
       let imageDiv = document.createElement("div");
       let imgBalise = document.createElement("img");
       imgBalise.src = product.images[i]; //pour chaques éléments du tableau on met l'url dans le champs img.src
-      imageDiv.className("image");
+      imageDiv.className = "image";
       imageDiv.appendChild(imgBalise);
       images.appendChild(imageDiv); //on ajoute à la div avant de refaire une boucle
     }
+    const table = document.createElement("div");
+    table.innerHTML = `<table>
+        <caption>
+          Statistiques
+        </caption>
+        <thead>
+          <tr>
+            <th>Remise (%)</th>
+            <th>Prix</th>
+            <th>rang</th>
+            <th>stock</th>
+          </tr>
+          <tr>
+            <td id="discountPercentage" class="discountPercentage">${product.discountPercentage} %</td>
+            <td id="price" class="price">${product.price}</td>
+            <td id="rating" class="rating">${product.rating}</td>
+            <td id="stock" class="stock">${product.stock}</td>
+          </tr>
+        </thead>
+      </table>`;
 
-    card.innerHTML = `
-  
-  <div id="images" class="images">
-  <div class="image"><img src="${product.images[0]}" alt="" srcset=""></div>
-  <div class="image"><img src="${product.images[1]}" alt="" srcset=""></div>
-  <div class="image"><img src="${product.images[2]}" alt="" srcset=""></div>
-  <div class="image"><img src="${product.images[3]}" alt="" srcset=""></div>
-  <div class="image"><img src="${product.images[4]}" alt="" srcset=""></div>
-  <div class="image"><img src="${product.images[5]}" alt="" srcset=""></div>
-  </div>
-  <div>
-    <table>
-      <caption>
-        Statistiques
-      </caption>
-      <thead>
-        <tr>
-          <th>Remise (%)</th>
-          <th>Prix</th>
-          <th>rang</th>
-          <th>stock</th>
-        </tr>
-        <tr>
-          <td id="discountPercentage" class="discountPercentage">${product.discountPercentage} %</td>
-          <td id="price" class="price">${product.price}</td>
-          <td id="rating" class="rating">${product.rating}</td>
-          <td id="stock" class="stock">${product.stock}</td>
-        </tr>
-      </thead>
-    </table>
-  </div>`;
+    card.appendChild(title);
+    card.appendChild(brand);
+    card.appendChild(category);
+    card.appendChild(description);
+    card.appendChild(images);
+    card.appendChild(table);
 
     content.appendChild(card);
   };
