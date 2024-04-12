@@ -1,52 +1,49 @@
 @import url(../css/Roboto.css);
 
-a {
-  text-decoration: none;
-  color: #050808;
-}
+$Font: #050808;
+$Background: #f8fafa;
+$Primary: #74a39a;
+$Accent: #b2acc8;
 
+button {
+  background: none;
+  border: none;
+  font-family: Roboto;
+  cursor: pointer;
+}
 body {
   margin: 0;
   padding: 0;
-  background: #f8fafa;
-  color: #050808;
+  background: $Background;
+  color: $Font;
   font-family: Roboto, sans-serif;
   box-sizing: border-box;
 }
 header {
   margin-top: 1em;
   height: 7em;
+  position: sticky;
+  top: 2em;
   nav {
     display: flex;
     .button-nav {
       display: flex;
       justify-content: space-around;
       align-content: space-between;
-      font-size: 1.7em;
       margin: auto;
       // padding: 1em;
       text-align: center;
       width: 70vw;
-      background-color: #74a39a;
+      background-color: $Primary;
       border-radius: 0.5em;
-      p {
-        width: 100%;
-      }
-      a {
-        color: #f8fafa;
-      }
-      .merch {
-        border-right: #b2acc8 solid 2px;
-        border-left: #b2acc8 solid 2px;
-      }
-      .contact {
-        border-right: #b2acc8 solid 2px;
+      button {
+        font-size: 1.7em;
       }
     }
   }
 }
 .card {
-  background-color: #74a39a;
+  background-color: $Primary;
   border-radius: 1em;
   width: 70vw;
   padding: 2em;
@@ -74,10 +71,10 @@ header {
   }
   table {
     border-radius: 1em;
-    background-color: #b2acc8;
+    background-color: $Accent;
     margin: auto;
     // width: 20vw;
-    color: #f8fafa;
+    color: $Background;
     caption {
       font-size: 2em;
     }
@@ -90,7 +87,7 @@ header {
       td.price,
       td.rating,
       td.stock {
-        border-left: #f8fafa solid 1px;
+        border-left: $Background solid 1px;
       }
     }
     .number {

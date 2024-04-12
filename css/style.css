@@ -1,7 +1,9 @@
 @import url(../css/Roboto.css);
-a {
-  text-decoration: none;
-  color: #050808;
+button {
+  background: none;
+  border: none;
+  font-family: Roboto;
+  cursor: pointer;
 }
 
 body {
@@ -16,6 +18,8 @@ body {
 header {
   margin-top: 1em;
   height: 7em;
+  position: sticky;
+  top: 2em;
 }
 header nav {
   display: flex;
@@ -24,25 +28,14 @@ header nav .button-nav {
   display: flex;
   justify-content: space-around;
   align-content: space-between;
-  font-size: 1.7em;
   margin: auto;
   text-align: center;
   width: 70vw;
   background-color: #74a39a;
   border-radius: 0.5em;
 }
-header nav .button-nav p {
-  width: 100%;
-}
-header nav .button-nav a {
-  color: #f8fafa;
-}
-header nav .button-nav .merch {
-  border-right: #b2acc8 solid 2px;
-  border-left: #b2acc8 solid 2px;
-}
-header nav .button-nav .contact {
-  border-right: #b2acc8 solid 2px;
+header nav .button-nav button {
+  font-size: 1.7em;
 }
 
 .card {
