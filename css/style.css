@@ -79,12 +79,15 @@ header nav .button-nav .contact {
 }
 .card table tr {
   font-size: 1.2em;
-  border: black 2px solid;
 }
-.card table tr,
 .card table tr th,
 .card table tr td {
   padding: 1em;
+}
+.card table tr td.price,
+.card table tr td.rating,
+.card table tr td.stock {
+  border-left: #f8fafa solid 1px;
 }
 .card table .number span {
   margin: 10px;

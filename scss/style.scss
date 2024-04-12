@@ -81,11 +81,14 @@ header {
     }
     tr {
       font-size: 1.2em;
-      border: black 2px solid;
-      &,
       th,
       td {
         padding: 1em;
+      }
+      td.price,
+      td.rating,
+      td.stock {
+        border-left: #f8fafa solid 1px;
       }
     }
     .number {

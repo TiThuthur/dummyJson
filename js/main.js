@@ -1,12 +1,12 @@
-for (let i = 1; i < 20; i++) {
-  const request = "https://dummyjson.com/products/" + i;
-  const content = document.getElementById("content");
+const request = "https://dummyjson.com/products";
+const content = document.getElementById("content");
 
-  // fonction qui appel l'url de dummyjson en async avec l'url dans request
-  const fetching = async (request) => {
-    const response = await fetch(request);
-    const product = await response.json();
-    // console.log(product);
+// fonction qui appel l'url de dummyjson en async avec l'url dans request
+const fetching = async (request) => {
+  const response = await fetch(request);
+  const productsObj = await response.json();
+  const products = productsObj.products;
+  products.forEach((product) => {
     const card = document.createElement("div");
     card.className = "card " + product.id;
     const title = document.createElement("div");
@@ -25,14 +25,15 @@ for (let i = 1; i < 20; i++) {
     const images = document.createElement("div");
     images.className = "images";
 
-    for (let i = 0; i < product.images.length; i++) {
+    product.images.forEach((image) => {
       let imageDiv = document.createElement("div");
       let imgBalise = document.createElement("img");
-      imgBalise.src = product.images[i]; //pour chaques éléments du tableau on met l'url dans le champs img.src
+      imgBalise.src = image; //pour chaques éléments du tableau on met l'url dans le champs img.src
       imageDiv.className = "image";
       imageDiv.appendChild(imgBalise);
       images.appendChild(imageDiv); //on ajoute à la div avant de refaire une boucle
-    }
+    });
+
     const table = document.createElement("div");
     table.innerHTML = `<table>
         <caption>
@@ -45,13 +46,15 @@ for (let i = 1; i < 20; i++) {
             <th>Rang</th>
             <th>Stock</th>
           </tr>
+          </thead>
+          <tbody>
           <tr>
-            <td id="discountPercentage" class="discountPercentage">${product.discountPercentage} %</td>
-            <td id="price" class="price">${product.price}€</td>
-            <td id="rating" class="rating">${product.rating}</td>
-            <td id="stock" class="stock">${product.stock}</td>
+          <td id="discountPercentage" class="discountPercentage">${product.discountPercentage} %</td>
+          <td id="price" class="price">${product.price}€</td>
+          <td id="rating" class="rating">${product.rating}</td>
+          <td id="stock" class="stock">${product.stock}</td>
           </tr>
-        </thead>
+          </tbody>
       </table>`;
 
     card.appendChild(title);
@@ -62,6 +65,7 @@ for (let i = 1; i < 20; i++) {
     card.appendChild(table);
 
     content.appendChild(card);
-  };
-  fetching(request);
-}
+  });
+};
+fetching(request);
+
