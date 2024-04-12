@@ -51,6 +51,8 @@ header {
   width: 70vw;
   padding: 2em;
   margin: 1em auto;
+  display: flex;
+  justify-content: space-around;
 
   .title {
     font-size: 2em;

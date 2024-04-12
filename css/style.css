@@ -51,6 +51,8 @@ header nav .button-nav .contact {
   width: 70vw;
   padding: 2em;
   margin: 1em auto;
+  display: flex;
+  justify-content: space-around;
 }
 .card .title {
   font-size: 2em;

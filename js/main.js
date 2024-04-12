@@ -9,6 +9,7 @@ const fetching = async (request) => {
   products.forEach((product) => {
     const card = document.createElement("div");
     card.className = "card " + product.id;
+    const cardContent = document.createElement("div")
     const title = document.createElement("div");
     title.className = "title";
     title.innerHTML = `<h1 id="title" class="roboto-regular">${product.title}</h1>`;
@@ -22,17 +23,17 @@ const fetching = async (request) => {
     description.id = "description";
     description.className = "description roboto-regular";
     description.innerText = `${product.description}`;
+
+    const cardImageAndTable = document.createElement("div")
     const images = document.createElement("div");
     images.className = "images";
 
-    product.images.forEach((image) => {
       let imageDiv = document.createElement("div");
       let imgBalise = document.createElement("img");
-      imgBalise.src = image; //pour chaques éléments du tableau on met l'url dans le champs img.src
+      imgBalise.src = product.images[0]; //pour chaques éléments du tableau on met l'url dans le champs img.src
       imageDiv.className = "image";
       imageDiv.appendChild(imgBalise);
       images.appendChild(imageDiv); //on ajoute à la div avant de refaire une boucle
-    });
 
     const table = document.createElement("div");
     table.innerHTML = `<table>
@@ -57,12 +58,14 @@ const fetching = async (request) => {
           </tbody>
       </table>`;
 
-    card.appendChild(title);
-    card.appendChild(brand);
-    card.appendChild(category);
-    card.appendChild(description);
-    card.appendChild(images);
-    card.appendChild(table);
+    cardContent.appendChild(title);
+    cardContent.appendChild(brand);
+    cardContent.appendChild(category);
+    cardContent.appendChild(description);
+    card.appendChild(cardContent)
+    cardImageAndTable.appendChild(images);
+    cardImageAndTable.appendChild(table);
+    card.appendChild(cardImageAndTable)
 
     content.appendChild(card);
   });
